@@ -33,6 +33,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
@@ -89,7 +93,7 @@
 					<driver>org.postgresql.Driver</driver>
 					<url>jdbc:postgresql://localhost:5432/prime-holding-task-db</url>
 					<user>postgres</user>
-					<password>root</password>
+					<password>Gaderene1</password>
 					<baselineOnMigrate>true</baselineOnMigrate>
 					<schemas>public</schemas>
 					<locations>

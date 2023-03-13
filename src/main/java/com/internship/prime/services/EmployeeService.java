@@ -9,6 +9,7 @@ import com.internship.prime.exceptions.EmployeeNotFoundException;
 import com.internship.prime.repositories.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class EmployeeService {
 
     }
 
+    @Transactional(rollbackFor = {RuntimeException.class})
     public EmployeeResponseDto updateEmployee(Long id, EmployeeRequestDto employeeRequestDto) {
 
         var employee = findEmployeeById(id);

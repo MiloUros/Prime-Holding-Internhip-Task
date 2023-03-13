@@ -10,6 +10,7 @@ import org.mapstruct.Mapping;
 public abstract class TaskMapper {
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "assignee", ignore = true)
     public abstract Task taskRequestDtoToEntity(TaskRequestDto taskRequestDto);
 
     public void updateTaskFromRequest(Task task, TaskRequestDto taskRequestDto) {
@@ -27,10 +28,6 @@ public abstract class TaskMapper {
 
         if (taskRequestDto.getDueDate() != null) {
             task.setDueDate(taskRequestDto.getDueDate());
-        }
-
-        if (taskRequestDto.getAssignee() != null) {
-            task.setAssignee(taskRequestDto.getAssignee());
         }
 
     }

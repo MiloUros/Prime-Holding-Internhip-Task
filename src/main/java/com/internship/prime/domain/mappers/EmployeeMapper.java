@@ -11,6 +11,7 @@ public abstract class EmployeeMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "task", ignore = true)
+    @Mapping(target = "completedTasks", ignore = true)
     public abstract Employee employeeRequestDtoToEntity(EmployeeRequestDto employeeRequestDto);
 
     public void updateEntityFromRequest(Employee employee, EmployeeRequestDto employeeRequestDto) {

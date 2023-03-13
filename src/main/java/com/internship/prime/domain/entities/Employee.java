@@ -35,5 +35,7 @@ public class Employee {
     private double salary;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "assignee")
     private List<Task> task;
+    @Column(name = "completed_tasks")
+    private int completedTasks;
 
 }
