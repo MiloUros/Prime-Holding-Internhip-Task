@@ -39,7 +39,7 @@ public class TaskController {
 
     }
 
-    @PutMapping("{/taskID}")
+    @PutMapping("/{taskID}")
     public ResponseEntity<TaskResponseDto> updateTask(@PathVariable Long taskID,
                                                       @RequestBody TaskRequestDto taskRequestDto) {
 
@@ -47,7 +47,7 @@ public class TaskController {
 
     }
 
-    @DeleteMapping("{taskID}")
+    @DeleteMapping("/{taskID}")
     public ResponseEntity<String> deleteTask(@PathVariable Long taskID) {
 
         taskService.deleteTask(taskID);

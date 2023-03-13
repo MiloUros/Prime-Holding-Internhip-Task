@@ -1,9 +1,13 @@
 package com.internship.prime.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -18,7 +22,8 @@ public class Task {
     @Column(name = "task_id", nullable = false)
     private Long id;
     @Column(name = "due_date")
-    private LocalDateTime dueDate;
+    @JsonFormat(pattern = "MM/dd/yyyy")
+    private LocalDate dueDate;
     @Column(name = "title")
     private String title;
     @Column(name = "description")

@@ -9,6 +9,7 @@ import com.internship.prime.exceptions.TaskNotFoundException;
 import com.internship.prime.repositories.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class TaskService {
 
     }
 
+    @Transactional(rollbackFor = {RuntimeException.class})
     public TaskResponseDto updateTask(Long id, TaskRequestDto taskRequestDto) {
 
         var task = findTaskById(id);
